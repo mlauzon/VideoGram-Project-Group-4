@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3F1567522156DBD0006BFD88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1567512156DBD0006BFD88 /* AppDelegate.swift */; };
-		3F1567542156DBD0006BFD88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1567532156DBD0006BFD88 /* ViewController.swift */; };
-		3F1567572156DBD0006BFD88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1567552156DBD0006BFD88 /* Main.storyboard */; };
 		3F1567592156DBD0006BFD88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1567582156DBD0006BFD88 /* Assets.xcassets */; };
 		3F15675C2156DBD0006BFD88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F15675A2156DBD0006BFD88 /* LaunchScreen.storyboard */; };
+		3F1567662156DBD7006BFD88 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1567652156DBD7006BFD88 /* CloudKit.framework */; };
+		3F15676B2156DC36006BFD88 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F15676A2156DC36006BFD88 /* User.swift */; };
+		3F1567732156DCCF006BFD88 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1567722156DCCF006BFD88 /* LogInViewController.swift */; };
+		3F1567782156DD3D006BFD88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1567762156DD3D006BFD88 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F15674E2156DBD0006BFD88 /* VideoGram Project Group 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGram Project Group 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1567512156DBD0006BFD88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F1567532156DBD0006BFD88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3F1567562156DBD0006BFD88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F1567582156DBD0006BFD88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F15675B2156DBD0006BFD88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F15675D2156DBD0006BFD88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1567632156DBD5006BFD88 /* VideoGram Project Group 4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VideoGram Project Group 4.entitlements"; sourceTree = "<group>"; };
+		3F1567652156DBD7006BFD88 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3F15676A2156DC36006BFD88 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../Desktop/VideoGram Reference/Project Group 4/User.swift"; sourceTree = "<group>"; };
+		3F1567722156DCCF006BFD88 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3F1567772156DD3D006BFD88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../Downloads/Project Group 4/Project Group 4/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1567662156DBD7006BFD88 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				3F1567502156DBD0006BFD88 /* VideoGram Project Group 4 */,
 				3F15674F2156DBD0006BFD88 /* Products */,
+				3F1567642156DBD7006BFD88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,32 @@
 		3F1567502156DBD0006BFD88 /* VideoGram Project Group 4 */ = {
 			isa = PBXGroup;
 			children = (
-				3F1567512156DBD0006BFD88 /* AppDelegate.swift */,
-				3F1567532156DBD0006BFD88 /* ViewController.swift */,
-				3F1567552156DBD0006BFD88 /* Main.storyboard */,
-				3F1567582156DBD0006BFD88 /* Assets.xcassets */,
-				3F15675A2156DBD0006BFD88 /* LaunchScreen.storyboard */,
+				3F1567672156DBFD006BFD88 /* Supporting Files */,
 				3F15675D2156DBD0006BFD88 /* Info.plist */,
+				3F1567762156DD3D006BFD88 /* Main.storyboard */,
+				3F15676A2156DC36006BFD88 /* User.swift */,
+				3F1567722156DCCF006BFD88 /* LogInViewController.swift */,
+				3F1567632156DBD5006BFD88 /* VideoGram Project Group 4.entitlements */,
 			);
 			path = "VideoGram Project Group 4";
+			sourceTree = "<group>";
+		};
+		3F1567642156DBD7006BFD88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F1567652156DBD7006BFD88 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F1567672156DBFD006BFD88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F1567512156DBD0006BFD88 /* AppDelegate.swift */,
+				3F1567582156DBD0006BFD88 /* Assets.xcassets */,
+				3F15675A2156DBD0006BFD88 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +121,14 @@
 				TargetAttributes = {
 					3F15674D2156DBD0006BFD88 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,9 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1567782156DD3D006BFD88 /* Main.storyboard in Resources */,
 				3F15675C2156DBD0006BFD88 /* LaunchScreen.storyboard in Resources */,
 				3F1567592156DBD0006BFD88 /* Assets.xcassets in Resources */,
-				3F1567572156DBD0006BFD88 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,28 +168,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1567542156DBD0006BFD88 /* ViewController.swift in Sources */,
 				3F1567522156DBD0006BFD88 /* AppDelegate.swift in Sources */,
+				3F15676B2156DC36006BFD88 /* User.swift in Sources */,
+				3F1567732156DCCF006BFD88 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3F1567552156DBD0006BFD88 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F1567562156DBD0006BFD88 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3F15675A2156DBD0006BFD88 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F15675B2156DBD0006BFD88 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3F1567762156DD3D006BFD88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1567772156DD3D006BFD88 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -280,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VideoGram Project Group 4/VideoGram Project Group 4.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = "VideoGram Project Group 4/Info.plist";
@@ -298,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VideoGram Project Group 4/VideoGram Project Group 4.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = "VideoGram Project Group 4/Info.plist";
