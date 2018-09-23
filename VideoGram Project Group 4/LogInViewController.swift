@@ -15,8 +15,16 @@ class ViewController: UIViewController {
         
     }
     
-    @IBOutlet var usernameTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var usernameTextField: UITextField! {
+        didSet{
+            textFieldNoEditing(usernameTextField)
+        }
+    }
+    @IBOutlet var passwordTextField: UITextField! {
+        didSet{
+            textFieldNoEditing(passwordTextField)
+        }
+    }
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
     
@@ -25,26 +33,26 @@ class ViewController: UIViewController {
         let usernameInput = usernameTextField.text!
         let passwordInput = passwordTextField.text!
         
-        if UserBase.shared.testCKConnection() {
-            if UserBase.shared.verifyUser(username: usernameInput) == .UsernameExists {
-                let signingUserIn = UserBase.shared.login(username: usernameInput, password: passwordInput)
+        if UserBase.CKUsers.testCKConnection() {
+            if UserBase.CKUsers.verifyUser(username: usernameInput) == .UsernameExists {
+                let signingUserIn = UserBase.CKUsers.login(username: usernameInput, password: passwordInput)
                 if signingUserIn == .SuccessfulLogin {
                     //Popup notification - Login Successful
-                    popUpNotification(string: LoginSuccessful)
+                    popUpNotification(title: LoginSuccessful, message: LoggingUserIn)
                 }
                 else {
                     //Popup notification - incorrect password
-                    popUpNotification(string: IncorrectPassword)
+                    popUpNotification(title: Error, message: IncorrectPassword)
                 }
             }
             else {
                 //Popup notification- User DNE
-                popUpNotification(string: UserNameDoesNotExist)
+                popUpNotification(title: Error, message: UserNameDoesNotExist)
             }
         }
         else {
             //Popup notification- not connected to Cloud Server
-            popUpNotification(string: CloudConnectionError)
+            popUpNotification(title: Error, message: CloudConnectionError)
         }
     }
     
@@ -52,35 +60,45 @@ class ViewController: UIViewController {
         let usernameInput = usernameTextField.text!
         let passwordInput = passwordTextField.text!
         
-        if UserBase.shared.testCKConnection() {
-            if UserBase.shared.verifyUser(username: usernameInput) == .UsernameDoesNotExist {
-                UserBase.shared.addUser(username: usernameInput, password: passwordInput)
+        if UserBase.CKUsers.testCKConnection() {
+            if UserBase.CKUsers.verifyUser(username: usernameInput) == .UsernameDoesNotExist {
+                UserBase.CKUsers.addUser(username: usernameInput, password: passwordInput)
+                UserBase.CKUsers.saveUserBase()
                 //Popup notification - Account is created, try logging in now
-                popUpNotification(string: CreatingAccount)
+                popUpNotification(title: CreatedAccount, message: NewAccountSignIn)
             }
             else {
                 //Popup notification - Username already exists
-                popUpNotification(string: UserNameAlreadyExists)
+                popUpNotification(title: Error, message: UserNameAlreadyExists)
             }
         }
         else {
             //Popup notification - not connected to cloud server
-            popUpNotification(string: CloudConnectionError)
+            popUpNotification(title: Error, message: CloudConnectionError)
         }
     }
     
-    func popUpNotification(string: String) {
-        let popup = UIAlertController(title: "Error", message: string, preferredStyle: UIAlertControllerStyle.alert)
+    func popUpNotification(title: String, message: String) {
+        let popup = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         popup.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(popup, animated: true, completion:nil)
     }
     
+    let Error = "Error"
     let UserNameAlreadyExists = "Username Already Exists"
     let UserNameDoesNotExist = "Username Does Not Exist"
     let IncorrectPassword = "Incorrect Password"
-    let LoginSuccessful = "Logging user in..."
-    let CreatingAccount = "Created Account. Please log in."
+    let LoginSuccessful = "Login Successful"
+    let LoggingUserIn = "Logging user in..."
+    let CreatedAccount = "Created Account"
+    let NewAccountSignIn = "Please log in."
     let CloudConnectionError = "Cannot connect to CKDB"
+    
+    func textFieldNoEditing(_ textfield: UITextField) {
+        textfield.autocorrectionType = .no
+        textfield.autocapitalizationType = .none
+        textfield.spellCheckingType = .no
+    }
     
     //TODO
     //    func goToHomePage() {
